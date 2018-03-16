@@ -96,7 +96,9 @@ function createMainWindow () {
         mainWin = null
     });
 
-    mainWin.show();
+    mainWin.once('ready-to-show', () => {
+        mainWin.show()
+    })
 }
 
 function createPresentationWindow () {
@@ -142,7 +144,9 @@ function createPresentationWindow () {
         // e.preventDefault();
     });
 
-    presentationWin.show();
+    presentationWin.once('ready-to-show', () => {
+        presentationWin.show();
+    })
 }
 
 // This method will be called when Electron has finished
