@@ -1,5 +1,6 @@
 
 $spacer_height: 50px;
+$presentation_font_size: 8rem;
 
 
 body {
@@ -15,4 +16,8 @@ body {
   margin:0;
   padding:0;
   height: $spacer_height;
+}
+
+.presentation {
+  font-size: $presentation_font_size;
 }
