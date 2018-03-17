@@ -66,7 +66,8 @@ function createMainWindow () {
         'x': mainWindowState.x,
         'y': mainWindowState.y,
         'width': mainWindowState.width,
-        'height': mainWindowState.height
+        'height': mainWindowState.height,
+        'icon': path.join(__dirname, './webapp/img/icons/primary-auction-64px.png')
     });
 
     // and load the index.html of the app.
@@ -114,7 +115,8 @@ function createPresentationWindow () {
         'y': presentationWindowState.y,
         'width': presentationWindowState.width,
         'height': presentationWindowState.height,
-        'autoHideMenuBar': true
+        'autoHideMenuBar': true,
+        'icon': path.join(__dirname, './webapp/img/icons/primary-auction-64px.png')
         // 'parent': mainWin
     });
 
