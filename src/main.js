@@ -95,7 +95,8 @@ function createMainWindow () {
     });
 
     mainWin.once('ready-to-show', () => {
-        mainWin.show()
+        mainWin.show();
+        createPresentationWindow();
     })
 }
 
@@ -152,7 +153,6 @@ function createPresentationWindow () {
 // Some APIs can only be used after this event occurs.
 app.on('ready', () => {
     createMainWindow();
-    createPresentationWindow();
 });
 
 // Quit when all windows are closed.
