@@ -113,7 +113,8 @@ function createPresentationWindow () {
         'x': presentationWindowState.x,
         'y': presentationWindowState.y,
         'width': presentationWindowState.width,
-        'height': presentationWindowState.height
+        'height': presentationWindowState.height,
+        'autoHideMenuBar': true
         // 'parent': mainWin
     });
 
@@ -180,4 +181,7 @@ app.on('activate', () => {
 
 ipcMain.on("updatePresentationWindow", (event, form) => {
     console.log(form);
+
+    presentationWin.webContents.send('updateLabels', form);
 });
+

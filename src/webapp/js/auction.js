@@ -13,11 +13,12 @@ function updatePresentationWindow(event){
     document.querySelector('#price').select();
 }
 
-
+function formInputCheck(event) {
+    if( event.key == "Enter" ) {
+        updatePresentationWindow();
+    }
+}
 
 
 document.querySelector("#btnUpdatePresentationWindow").addEventListener('click', updatePresentationWindow);
-
-$( document ).ready(function() {
-    console.log( "ready!" );
-});
+document.querySelector("#frm").addEventListener('keypress', formInputCheck);
