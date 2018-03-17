@@ -3,7 +3,7 @@ const {ipcRenderer} = require('electron');
 let previousPrice = "";
 
 ipcRenderer.on("updateLabels", (event, form) => {
-    console.log(form);
+    // console.log(form);
 
     $("#lblLotNr").html(form.lotNr);
 

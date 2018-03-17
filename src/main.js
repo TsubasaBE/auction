@@ -142,7 +142,7 @@ function createPresentationWindow () {
         // Dereference the window object, usually you would store windows
         // in an array if your app supports multi windows, this is the time
         // when you should delete the corresponding element.
-        console.log("Oopsie daisy!")
+        // console.log("Oopsie daisy!")
         // e.preventDefault();
     });
 
@@ -182,7 +182,7 @@ app.on('activate', () => {
 
 
 ipcMain.on("updatePresentationWindow", (event, form) => {
-    console.log(form);
+    // console.log(form);
 
     presentationWin.webContents.send('updateLabels', form);
 });
