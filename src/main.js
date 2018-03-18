@@ -85,7 +85,7 @@ function createPresentationWindow() {
   presentationWindowState.manage(presentationWin);
 
   // Open the DevTools.
-  // presentationWin.webContents.openDevTools({ mode: 'bottom' });
+  presentationWin.webContents.openDevTools({ mode: 'bottom' });
 
   presentationWin.setMenu(Menu.buildFromTemplate(mainMenuTemplate));
 
@@ -135,7 +135,7 @@ function createMainWindow() {
   mainWindowState.manage(mainWin);
 
   // Open the DevTools.
-  // mainWin.webContents.openDevTools({ mode: 'bottom' });
+  mainWin.webContents.openDevTools({ mode: 'bottom' });
 
   mainWin.setMenu(Menu.buildFromTemplate(mainMenuTemplate));
 
