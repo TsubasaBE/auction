@@ -93,7 +93,7 @@ if (!Array.prototype.reduce) {
 }
 
 // main function
-function serializeJson (form, protected = false) {
+function serializeJson (form, protect = false) {
     var data = {}, form_arr = [];
     // export to array
     if(typeof HTMLFormElement === "function" && form instanceof HTMLFormElement) {
@@ -118,7 +118,7 @@ function serializeJson (form, protected = false) {
                 i = isNaN(i) ? s[ck].length : i;
                 s[ck][i] = s[ck][i] || {};
                 if(k === arr.length - 1) {
-                    if(protected && JSON.stringify({}) !== JSON.stringify(s[ck][i])) {
+                    if(protect && JSON.stringify({}) !== JSON.stringify(s[ck][i])) {
                         
                         while(s[ck][i] !== undefined) {
                             var tmp = s[ck][i];
