@@ -1,22 +1,70 @@
 {
   "name": "auction",
-  "version": "0.0.1",
+  "productName": "auction",
+  "version": "0.0.3",
   "description": "Auction Presenter - Powered by Electron",
-  "author": "Tsubasa.be",
-  "license": "MIT",
-  "main": "./src/main.js",
+  "main": "src/main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "lint": "eslint src --color"
   },
-  "devDependencies": {
-    "electron": "^1.8.4",
-    "eslint": "^4.19.0",
-    "gulp": "^3.9.1",
-    "gulp-sass": "^3.2.0",
-    "gulp-sourcemaps": "^2.6.4"
+  "keywords": [],
+  "author": "rivfader",
+  "license": "MIT",
+  "config": {
+    "forge": {
+      "make_targets": {
+        "win32": [
+          "squirrel"
+        ],
+        "darwin": [
+          "zip"
+        ],
+        "linux": [
+          "deb",
+          "rpm"
+        ]
+      },
+      "electronPackagerConfig": {
+        "packageManager": "npm"
+      },
+      "electronWinstallerConfig": {
+        "name": "auction"
+      },
+      "electronInstallerDebian": {},
+      "electronInstallerRedhat": {},
+      "github_repository": {
+        "owner": "",
+        "name": ""
+      },
+      "windowsStoreConfig": {
+        "packageName": "",
+        "name": "auction"
+      }
+    }
   },
   "dependencies": {
+    "electron-compile": "^6.4.2",
+    "electron-squirrel-startup": "^1.0.0",
     "electron-window-state": "^4.1.1",
     "form-serialize-json": "^1.0.8"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "electron-forge": "^5.1.1",
+    "electron-prebuilt-compile": "1.8.3",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^15.1.0",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-react": "^7.7.0",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.4"
   }
 }
