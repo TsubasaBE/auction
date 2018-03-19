@@ -145,10 +145,10 @@ function createMainWindow() {
     // in an array if your app supports multi windows, this is the time
     // when you should delete the corresponding element.
     mainWin = null;
-    if( mainWin !== null) {
+    if (mainWin !== null) {
       mainWin = null;
     }
-    if( presentationWin !== null) {
+    if (presentationWin !== null) {
       presentationWin = null;
     }
     app.quit();
@@ -193,8 +193,7 @@ ipcMain.on('updatePresentationWindow', (event, form) => {
 
   if (presentationWin === null) {
     createPresentationWindow();
-  }
-  else {
+  } else {
     presentationWin.webContents.send('updateLabels', form);
   }
 });
