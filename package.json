@@ -29,7 +29,9 @@
         ]
       },
       "electronPackagerConfig": {
-        "packageManager": "npm"
+        "packageManager": "npm",
+		    "icon": "./src/webapp/img/icons/primary_auction_64px.ico",
+		    "asar": true
       },
       "electronWinstallerConfig": {
         "name": "auction"
