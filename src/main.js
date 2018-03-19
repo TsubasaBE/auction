@@ -189,7 +189,7 @@ app.on('activate', () => {
 
 
 ipcMain.on('updatePresentationWindow', (event, form) => {
-  console.log(presentationWin);
+  // console.log(presentationWin);
 
   if (presentationWin === null) {
     createPresentationWindow();
