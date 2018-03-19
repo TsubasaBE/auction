@@ -96,7 +96,7 @@ function createPresentationWindow() {
     // in an array if your app supports multi windows, this is the time
     // when you should delete the corresponding element.
     // console.log("Oopsie daisy!")
-    // e.preventDefault();
+    presentationWin = null;
   });
 
   presentationWin.once('ready-to-show', () => {
@@ -145,6 +145,13 @@ function createMainWindow() {
     // in an array if your app supports multi windows, this is the time
     // when you should delete the corresponding element.
     mainWin = null;
+    if( mainWin !== null) {
+      mainWin = null;
+    }
+    if( presentationWin !== null) {
+      presentationWin = null;
+    }
+    app.quit();
   });
 
   mainWin.once('ready-to-show', () => {
@@ -182,7 +189,12 @@ app.on('activate', () => {
 
 
 ipcMain.on('updatePresentationWindow', (event, form) => {
-  // console.log(form);
+  console.log(presentationWin);
 
-  presentationWin.webContents.send('updateLabels', form);
+  if (presentationWin === null) {
+    createPresentationWindow();
+  }
+  else {
+    presentationWin.webContents.send('updateLabels', form);
+  }
 });
