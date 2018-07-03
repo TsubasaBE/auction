@@ -1,7 +1,7 @@
 {
   "name": "auction",
   "productName": "auction",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "description": "Auction Presenter - Powered by Electron",
   "main": "src/main.js",
   "scripts": {
