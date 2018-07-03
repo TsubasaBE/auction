@@ -1,16 +1,14 @@
-'use strict';
-
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-var sourcemaps = require('gulp-sourcemaps');
+const gulp = require('gulp');
+const sass = require('gulp-sass');
+const sourcemaps = require('gulp-sourcemaps');
 
 
-gulp.task('default', function() {
-  
+gulp.task('default', () => {
+
 });
 
-gulp.task('sass', function () {
-    return gulp.src('./src/webapp/sass/**/*.scss')
+gulp.task('sass', () => {
+  return gulp.src('./src/webapp/sass/**/*.scss')
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
     .pipe(sourcemaps.write('./maps'))
