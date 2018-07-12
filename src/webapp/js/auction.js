@@ -2,20 +2,28 @@ const { ipcRenderer } = require('electron');
 
 const serialize = require('form-serialize-json');
 
-function updatePresentationWindow(event) {
-  // console.log("GNAR!");
+function updatePresentationWindow() {
+  try {
+    // console.log("GNAR!");
 
-  const form = document.querySelector('#frm');
-  const jsonform = serialize(form);
+    const form = document.querySelector('#frm');
+    const jsonform = serialize(form);
 
-  ipcRenderer.send('updatePresentationWindow', jsonform);
+    ipcRenderer.send('updatePresentationWindow', jsonform);
 
-  document.querySelector('#price').select();
+    document.querySelector('#price').select();
+  } catch (e) {
+    ipcRenderer.send('logException', e.message, e.stack);
+  }
 }
 
 function formInputCheck(event) {
-  if (event.key === 'Enter') {
-    updatePresentationWindow();
+  try {
+    if (event.key === 'Enter') {
+      updatePresentationWindow();
+    }
+  } catch (e) {
+    ipcRenderer.send('logException', e.message, e.stack);
   }
 }
 

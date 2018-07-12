@@ -1,7 +1,7 @@
 {
   "name": "auction",
   "productName": "auction",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Auction Presenter - Powered by Electron",
   "main": "src/main.js",
   "scripts": {
@@ -50,8 +50,8 @@
   },
   "dependencies": {
     "electron-compile": "^6.4.3",
+    "electron-log-rotate": "^1.0.5",
     "electron-squirrel-startup": "^1.0.0",
-    "electron-window-state": "^4.1.1",
     "form-serialize-json": "^1.0.8"
   },
   "devDependencies": {
