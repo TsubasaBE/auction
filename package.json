@@ -50,6 +50,7 @@
   },
   "dependencies": {
     "electron-compile": "^6.4.3",
+    "electron-log-rotate": "^1.0.5",
     "electron-squirrel-startup": "^1.0.0",
     "form-serialize-json": "^1.0.8"
   },
