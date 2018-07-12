@@ -1,7 +1,6 @@
 const { app, BrowserWindow, Menu, ipcMain } = require('electron');
 const path = require('path');
 const url = require('url');
-const windowStateKeeper = require('electron-window-state');
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -54,19 +53,11 @@ const mainMenuTemplate = [
 
 
 function createPresentationWindow() {
-  // Load the previous state with fallback to defaults
-  const presentationWindowState = windowStateKeeper({
-    defaultWidth: 800,
-    defaultHeight: 600,
-  });
-
   // Create the browser window.
   presentationWin = new BrowserWindow({
     show: false,
-    x: presentationWindowState.x,
-    y: presentationWindowState.y,
-    width: presentationWindowState.width,
-    height: presentationWindowState.height,
+    width: 800,
+    height: 600,
     autoHideMenuBar: true,
     icon: path.join(__dirname, './webapp/img/icons/primary-auction-64px.png'),
     // 'parent': mainWin
@@ -78,11 +69,6 @@ function createPresentationWindow() {
     protocol: 'file:',
     slashes: true,
   }));
-
-  // Let us register listeners on the window, so we can update the state
-  // automatically (the listeners will be removed when the window is closed)
-  // and restore the maximized or full screen state
-  presentationWindowState.manage(presentationWin);
 
   // Open the DevTools.
   // presentationWin.webContents.openDevTools({ mode: 'bottom' });
@@ -106,19 +92,11 @@ function createPresentationWindow() {
 
 
 function createMainWindow() {
-  // Load the previous state with fallback to defaults
-  const mainWindowState = windowStateKeeper({
-    defaultWidth: 800,
-    defaultHeight: 600,
-  });
-
   // Create the browser window.
   mainWin = new BrowserWindow({
     show: false,
-    x: mainWindowState.x,
-    y: mainWindowState.y,
-    width: mainWindowState.width,
-    height: mainWindowState.height,
+    width: 800,
+    height: 600,
     icon: path.join(__dirname, './webapp/img/icons/primary-auction-64px.png'),
   });
 
@@ -128,11 +106,6 @@ function createMainWindow() {
     protocol: 'file:',
     slashes: true,
   }));
-
-  // Let us register listeners on the window, so we can update the state
-  // automatically (the listeners will be removed when the window is closed)
-  // and restore the maximized or full screen state
-  mainWindowState.manage(mainWin);
 
   // Open the DevTools.
   // mainWin.webContents.openDevTools({ mode: 'bottom' });
