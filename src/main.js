@@ -5,7 +5,7 @@ const path = require('path');
 const url = require('url');
 
 setup({
-  appName: 'auction',  // require for directory name
+  appName: 'auction',  // required for directory name
   maxSize: (10 * 1024 * 1024),
 });
 // Remove logs older than 10 days
