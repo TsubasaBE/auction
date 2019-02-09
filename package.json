@@ -53,7 +53,8 @@
     "electron-compile": "^6.4.4",
     "electron-log-rotate": "^1.0.5",
     "electron-squirrel-startup": "^1.0.0",
-    "form-serialize-json": "^1.0.8"
+    "form-serialize-json": "^1.0.8",
+    "sqlite3": "^4.0.6"
   },
   "devDependencies": {
     "babel-plugin-transform-async-to-generator": "^6.24.1",
